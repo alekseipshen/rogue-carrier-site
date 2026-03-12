@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import { Inter, Oswald } from 'next/font/google';
+import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const oswald = Oswald({
+  variable: '--font-oswald',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: 'Rogue Carrier | CDL Class A Drivers Wanted — Up to $0.70/mile',
+  description:
+    'Join Rogue Carrier — 800+ trucks, dedicated Dry Van routes across 49 states. Earn up to $0.70/mile with modern 2021-2026 equipment. Apply now!',
+  keywords: 'CDL Class A, truck driver jobs, Rogue Carrier, dedicated routes, dry van, OTR driving',
+  openGraph: {
+    title: 'Rogue Carrier — Freight Without Limits',
+    description: 'Join 800+ drivers earning up to $0.70/mile on dedicated routes across 49 states.',
+    type: 'website',
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="dark">
+      <body className={`${inter.variable} ${oswald.variable} antialiased bg-rogue-black text-rogue-white`}>
+        <Header />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

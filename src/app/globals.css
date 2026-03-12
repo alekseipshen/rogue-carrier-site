@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #0a0a0a;
+  --color-foreground: #ededed;
+  --color-rogue-red: #C41E2A;
+  --color-rogue-red-light: #E8343F;
+  --color-rogue-red-dark: #9A1720;
+  --color-rogue-black: #0a0a0a;
+  --color-rogue-dark: #141414;
+  --color-rogue-gray: #1e1e1e;
+  --color-rogue-gray-light: #2a2a2a;
+  --color-rogue-silver: #9ca3af;
+  --color-rogue-white: #f5f5f5;
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-oswald);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #C41E2A;
+  border-radius: 4px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  color: #ededed;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Red glow effect */
+.red-glow {
+  box-shadow: 0 0 30px rgba(196, 30, 42, 0.3), 0 0 60px rgba(196, 30, 42, 0.1);
+}
+
+.red-glow-text {
+  text-shadow: 0 0 20px rgba(196, 30, 42, 0.5), 0 0 40px rgba(196, 30, 42, 0.2);
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+  background: #141414;
+  border-radius: 12px;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 13px;
+  padding: 1px;
+  background: linear-gradient(135deg, #C41E2A, transparent 50%, #C41E2A);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Road line animation */
+@keyframes roadMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+/* Pulse red */
+@keyframes pulseRed {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 30, 42, 0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(196, 30, 42, 0); }
+}
+
+.pulse-red {
+  animation: pulseRed 2s infinite;
+}
+
+/* Noise texture overlay */
+.noise-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Selection */
+::selection {
+  background: rgba(196, 30, 42, 0.3);
+  color: #fff;
+}
