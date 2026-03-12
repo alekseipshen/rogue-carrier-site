@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { formatPhone } from '@/utils/formatPhone';
 
 export default function QuickApplyForm() {
   const [formData, setFormData] = useState({
@@ -67,10 +68,10 @@ export default function QuickApplyForm() {
         <div>
           <input
             type="tel"
-            placeholder="Phone Number"
+            placeholder="(555) 123-4567"
             required
             value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            onChange={(e) => setFormData({ ...formData, phone: formatPhone(e.target.value) })}
             className="w-full bg-rogue-gray border border-white/10 rounded-lg px-4 py-3 text-white placeholder-rogue-silver/50 focus:outline-none focus:border-rogue-red/50 focus:ring-1 focus:ring-rogue-red/50 transition-all"
           />
         </div>

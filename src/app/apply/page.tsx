@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
 import Image from 'next/image';
+import { formatPhone } from '@/utils/formatPhone';
 
 const steps = [
   { id: 1, label: 'Basic Info' },
@@ -194,7 +195,7 @@ export default function ApplyPage() {
                         type="tel"
                         required
                         value={formData.phone}
-                        onChange={(e) => updateField('phone', e.target.value)}
+                        onChange={(e) => updateField('phone', formatPhone(e.target.value))}
                         className="w-full bg-rogue-gray border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rogue-red/50 focus:ring-1 focus:ring-rogue-red/50 transition-all"
                       />
                     </div>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
 import Image from 'next/image';
+import { formatPhone } from '@/utils/formatPhone';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -208,7 +209,7 @@ export default function ContactPage() {
                         <input
                           type="tel"
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, phone: formatPhone(e.target.value) })}
                           className="w-full bg-rogue-gray border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rogue-red/50 focus:ring-1 focus:ring-rogue-red/50 transition-all"
                         />
                       </div>
