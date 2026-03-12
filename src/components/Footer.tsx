@@ -12,11 +12,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Image
-              src="/images/logo-dark.jpg"
+              src="/images/logo.png"
               alt="Rogue Carrier"
-              width={160}
-              height={44}
-              className="h-10 w-auto rounded mb-4"
+              width={240}
+              height={58}
+              className="h-14 w-auto mb-4"
             />
             <p className="text-rogue-silver text-sm leading-relaxed mt-4">
               Freight Without Limits. 800+ trucks delivering across 49 states with modern equipment and dedicated routes.

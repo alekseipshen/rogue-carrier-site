@@ -45,11 +45,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="relative z-10 flex-shrink-0">
             <Image
-              src="/images/logo-dark.jpg"
+              src="/images/logo.png"
               alt="Rogue Carrier"
-              width={180}
-              height={50}
-              className="h-12 w-auto rounded"
+              width={280}
+              height={68}
+              className="h-14 sm:h-16 w-auto"
               priority
             />
           </Link>
