@@ -97,7 +97,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-white font-bold uppercase tracking-wider text-sm mb-4">Email</h3>
                     <a
-                      href="mailto:roman@teamlinellc.com"
+                      href="mailto:info@roguecarrierinc.com"
                       className="flex items-center gap-4 p-4 rounded-xl bg-rogue-dark border border-white/5 hover:border-rogue-red/30 transition-all group"
                     >
                       <div className="w-12 h-12 bg-rogue-red/10 rounded-xl flex items-center justify-center group-hover:bg-rogue-red/20 transition-colors">
@@ -106,10 +106,27 @@ export default function ContactPage() {
                         </svg>
                       </div>
                       <div>
-                        <div className="text-white font-bold">roman@teamlinellc.com</div>
+                        <div className="text-white font-bold">info@roguecarrierinc.com</div>
                         <div className="text-rogue-silver text-sm">General Inquiries</div>
                       </div>
                     </a>
+                  </div>
+
+                  {/* Address */}
+                  <div>
+                    <h3 className="text-white font-bold uppercase tracking-wider text-sm mb-4">Visit Us</h3>
+                    <div className="flex items-center gap-4 p-4 rounded-xl bg-rogue-dark border border-white/5">
+                      <div className="w-12 h-12 bg-rogue-red/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-rogue-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-white font-bold">1312 Marquette Dr, Ste E</div>
+                        <div className="text-rogue-silver text-sm">Romeoville, IL 60446</div>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Hours */}

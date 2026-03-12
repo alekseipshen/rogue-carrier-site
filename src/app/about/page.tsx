@@ -28,9 +28,10 @@ export default function AboutPage() {
               THE <span className="text-rogue-red">ROGUE</span> SPIRIT
             </h1>
             <p className="text-rogue-silver text-xl max-w-3xl leading-relaxed">
-              We didn&apos;t start Rogue Carrier to be just another trucking company.
-              We built it to challenge the status quo &mdash; to show that a carrier can grow fast,
-              invest in the best equipment, and still put drivers first.
+              Two partners, fed up with the old-school ways of trucking, founded Rogue Carrier
+              in 2020 with one mission: put drivers and customers first. We didn&apos;t start this
+              to be just another carrier &mdash; we built it to challenge the status quo, invest in
+              the best equipment, and prove that transparency and loyalty still mean something on the road.
             </p>
           </motion.div>
         </div>
@@ -106,8 +107,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <AnimatedCounter end={800} suffix="+" label="Trucks in Fleet" />
+            <AnimatedCounter end={150} suffix="K" label="Shipments per Year" />
             <AnimatedCounter end={49} label="States Covered" />
-            <AnimatedCounter end={6} label="Years of Growth" />
             <AnimatedCounter end={200} suffix="+" label="New Trucks in 2026" />
           </div>
         </div>
