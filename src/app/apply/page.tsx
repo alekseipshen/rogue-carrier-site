@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
+import Image from 'next/image';
 
 const steps = [
   { id: 1, label: 'Basic Info' },
@@ -86,7 +87,8 @@ export default function ApplyPage() {
     <>
       {/* ============ HERO ============ */}
       <section className="relative pt-32 pb-12 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-rogue-dark via-rogue-black to-rogue-black" />
+        <Image src="/images/fleet/photo_19.jpg" alt="" fill className="object-cover opacity-20" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-rogue-dark/90 via-rogue-black/95 to-rogue-black" />
         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-rogue-red via-rogue-red/50 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

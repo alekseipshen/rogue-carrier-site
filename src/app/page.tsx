@@ -6,7 +6,10 @@ import Link from 'next/link';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParticleField from '@/components/ParticleField';
+import Image from 'next/image';
 import QuickApplyForm from '@/components/QuickApplyForm';
+import FleetGallery from '@/components/FleetGallery';
+import PhotoBanner from '@/components/PhotoBanner';
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -27,7 +30,8 @@ export default function HomePage() {
           style={{ scale: heroScale, y: heroY }}
           className="absolute inset-0"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-rogue-gray via-rogue-black to-rogue-dark" />
+          <Image src="/images/fleet/photo_14.jpg" alt="" fill className="object-cover opacity-20" sizes="100vw" priority />
+          <div className="absolute inset-0 bg-gradient-to-br from-rogue-black via-rogue-black/90 to-rogue-dark/80" />
           <div className="absolute inset-0 bg-gradient-to-r from-rogue-black via-rogue-black/90 to-rogue-black/70" />
         </motion.div>
 
@@ -160,6 +164,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ============ FLEET GALLERY ============ */}
+      <FleetGallery />
+
       {/* ============ WHY ROGUE ============ */}
       <section className="py-24 relative noise-bg">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -246,6 +253,20 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ============ PHOTO DIVIDER ============ */}
+      <PhotoBanner
+        src="/images/fleet/photo_5.jpg"
+        alt="Rogue Carrier dedicated route truck"
+        height="h-[300px] md:h-[400px]"
+        overlay="red"
+      >
+        <div className="text-center">
+          <h3 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'var(--font-oswald)' }}>
+            800+ TRUCKS. <span className="text-rogue-red">49 STATES.</span>
+          </h3>
+        </div>
+      </PhotoBanner>
 
       {/* ============ CTA BANNER ============ */}
       <section className="relative py-24 overflow-hidden">

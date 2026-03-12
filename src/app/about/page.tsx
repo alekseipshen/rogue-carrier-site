@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import Link from 'next/link';
+import PhotoBanner from '@/components/PhotoBanner';
 
 export default function AboutPage() {
   return (
@@ -34,6 +35,14 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* ============ FLEET PHOTO ============ */}
+      <PhotoBanner
+        src="/images/fleet/photo_15.jpg"
+        alt="Rogue Carrier modern Freightliner fleet"
+        height="h-[300px] md:h-[400px]"
+        overlay="gradient"
+      />
 
       {/* ============ TIMELINE ============ */}
       <section className="py-24 relative">
@@ -167,6 +176,20 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* ============ DRIVER PHOTO ============ */}
+      <PhotoBanner
+        src="/images/fleet/photo_14.jpg"
+        alt="Rogue Carrier driver and fleet"
+        height="h-[300px] md:h-[350px]"
+        overlay="red"
+      >
+        <div className="text-center px-4">
+          <h3 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'var(--font-oswald)' }}>
+            MODERN EQUIPMENT. <span className="text-rogue-red">REAL SUPPORT.</span>
+          </h3>
+        </div>
+      </PhotoBanner>
 
       {/* ============ CTA ============ */}
       <section className="py-20 bg-gradient-to-r from-rogue-red-dark via-rogue-red to-rogue-red-dark">

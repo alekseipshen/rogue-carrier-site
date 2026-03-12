@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import ScrollReveal from '@/components/ScrollReveal';
 import Link from 'next/link';
+import PhotoBanner from '@/components/PhotoBanner';
 
 function BenefitIcon({ children }: { children: ReactNode }) {
   return (
@@ -208,6 +209,14 @@ export default function BenefitsPage() {
         </div>
       </section>
 
+      {/* ============ FLEET PHOTO ============ */}
+      <PhotoBanner
+        src="/images/fleet/photo_17.jpg"
+        alt="Rogue Carrier modern fleet"
+        height="h-[250px] md:h-[350px]"
+        overlay="gradient"
+      />
+
       {/* ============ BENEFITS GRID ============ */}
       {benefits.map((section, sectionIdx) => (
         <section key={section.category} className={`py-16 ${sectionIdx % 2 !== 0 ? 'bg-rogue-dark/50' : ''}`}>
@@ -247,6 +256,20 @@ export default function BenefitsPage() {
           </div>
         </section>
       ))}
+
+      {/* ============ DRIVER PHOTO ============ */}
+      <PhotoBanner
+        src="/images/fleet/photo_1.jpg"
+        alt="Driver with Rogue Carrier truck"
+        height="h-[250px] md:h-[350px]"
+        overlay="red"
+      >
+        <div className="text-center px-4">
+          <h3 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'var(--font-oswald)' }}>
+            YOUR TRUCK. <span className="text-rogue-red">YOUR ROAD.</span>
+          </h3>
+        </div>
+      </PhotoBanner>
 
       {/* ============ REQUIREMENTS ============ */}
       <section className="py-24 relative noise-bg">
