@@ -19,7 +19,7 @@ export default function Footer() {
               className="h-14 w-auto mb-4"
             />
             <p className="text-rogue-silver text-sm leading-relaxed mt-4">
-              Freight Without Limits. 800+ trucks delivering across 49 states with modern equipment and dedicated routes.
+              Freight Without Limits. 800+ trucks delivering across 48 states with modern equipment and dedicated routes.
             </p>
           </div>
 

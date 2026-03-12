@@ -81,7 +81,7 @@ const benefits = [
           </BenefitIcon>
         ),
         title: 'Dedicated Routes',
-        desc: 'No load boards, no uncertainty. Pre-planned routes with consistent customers across 49 states.',
+        desc: 'No load boards, no uncertainty. Pre-planned routes with consistent customers across 48 states.',
         highlight: false,
       },
       {

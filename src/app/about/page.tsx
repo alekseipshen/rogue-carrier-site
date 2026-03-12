@@ -74,7 +74,7 @@ export default function AboutPage() {
               {
                 year: '2024',
                 title: 'Going Nationwide',
-                desc: 'Reached 600 trucks delivering across 49 states. Launched dedicated Dry Van routes with consistent, high-paying freight.',
+                desc: 'Reached 600 trucks delivering across 48 states. Launched dedicated Dry Van routes with consistent, high-paying freight.',
               },
               {
                 year: '2026',
@@ -108,7 +108,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <AnimatedCounter end={800} suffix="+" label="Trucks in Fleet" />
             <AnimatedCounter end={150} suffix="K" label="Shipments per Year" />
-            <AnimatedCounter end={49} label="States Covered" />
+            <AnimatedCounter end={48} label="States Covered" />
             <AnimatedCounter end={200} suffix="+" label="New Trucks in 2026" />
           </div>
         </div>

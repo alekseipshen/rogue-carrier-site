@@ -81,7 +81,7 @@ export default function HomePage() {
               >
                 <span className="text-4xl sm:text-5xl font-black text-white">$0.70</span>
                 <span className="text-rogue-silver text-lg">/mile</span>
-                <span className="text-rogue-silver text-sm">&#8226; Dedicated Routes &#8226; 49 States</span>
+                <span className="text-rogue-silver text-sm">&#8226; Dedicated Routes &#8226; 48 States</span>
               </motion.div>
 
               {/* Description */}
@@ -157,7 +157,7 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <AnimatedCounter end={800} suffix="+" label="Trucks in Fleet" />
-            <AnimatedCounter end={49} label="States Covered" />
+            <AnimatedCounter end={48} label="States Covered" />
             <AnimatedCounter end={0.70} prefix="$" label="Per Mile (up to)" decimals={2} />
             <AnimatedCounter end={2026} label="Newest Equipment" />
           </div>
@@ -290,7 +290,7 @@ export default function HomePage() {
               READY TO GO <span className="underline decoration-4 underline-offset-4">ROGUE</span>?
             </h2>
             <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              800+ trucks. 49 states. Up to $0.70/mile. Modern equipment. Dedicated routes.
+              800+ trucks. 48 states. Up to $0.70/mile. Modern equipment. Dedicated routes.
               Your next chapter starts here.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
