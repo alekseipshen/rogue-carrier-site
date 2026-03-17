@@ -79,7 +79,8 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex items-baseline gap-3 mb-6"
               >
-                <span className="text-4xl sm:text-5xl font-black text-white">Top Pay</span>
+                <span className="text-4xl sm:text-5xl font-black text-white">$0.70</span>
+                <span className="text-rogue-silver text-lg">/mile</span>
                 <span className="text-rogue-silver text-sm">&#8226; Dedicated Routes &#8226; 48 States</span>
               </motion.div>
 
@@ -157,8 +158,8 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <AnimatedCounter end={400} suffix="+" label="Trucks in Fleet" />
             <AnimatedCounter end={48} label="States Covered" />
+            <AnimatedCounter end={0.70} prefix="$" label="Per Mile (up to)" decimals={2} />
             <AnimatedCounter end={2026} label="Newest Equipment" />
-            <AnimatedCounter end={24} suffix="/7" label="Driver Support" />
           </div>
         </div>
       </section>
@@ -187,7 +188,7 @@ export default function HomePage() {
                   </svg>
                 ),
                 title: 'Top Pay',
-                desc: 'Competitive pay on dedicated routes. Predictable income, no guessing.',
+                desc: 'Up to $0.70/mile on dedicated routes. Predictable income, no guessing.',
               },
               {
                 icon: (
@@ -289,7 +290,7 @@ export default function HomePage() {
               READY TO GO <span className="underline decoration-4 underline-offset-4">ROGUE</span>?
             </h2>
             <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              400+ trucks. 48 states. Competitive pay. Modern equipment. Dedicated routes.
+              400+ trucks. 48 states. Up to $0.70/mile. Modern equipment. Dedicated routes.
               Your next chapter starts here.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
