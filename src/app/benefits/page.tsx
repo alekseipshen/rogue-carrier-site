@@ -26,7 +26,7 @@ const benefits = [
             </svg>
           </BenefitIcon>
         ),
-        title: 'Up to $0.70/Mile',
+        title: 'Competitive Pay',
         desc: 'Top-tier pay for CDL Class A drivers. Dedicated routes mean predictable, steady income every week.',
         highlight: true,
       },
@@ -39,8 +39,8 @@ const benefits = [
             </svg>
           </BenefitIcon>
         ),
-        title: 'Fuel Card & Discounts',
-        desc: 'Company-provided fuel card with negotiated discounts at major truck stops nationwide.',
+        title: 'Fuel Card',
+        desc: 'Company-provided fuel card at major truck stops nationwide.',
         highlight: false,
       },
       {
@@ -68,7 +68,7 @@ const benefits = [
             </svg>
           </BenefitIcon>
         ),
-        title: 'Modern Fleet (2021\u20132026)',
+        title: 'Modern Fleet (2024\u20132026)',
         desc: 'Drive the newest equipment on the road. Clean, well-maintained trucks that you can be proud of.',
         highlight: true,
       },
@@ -181,19 +181,18 @@ export default function BenefitsPage() {
                   <span className="text-rogue-red text-sm font-bold uppercase tracking-widest">Earn More</span>
                   <div className="flex items-baseline gap-2 mt-2 justify-center lg:justify-start">
                     <span className="text-6xl sm:text-7xl font-black text-white" style={{ fontFamily: 'var(--font-oswald)' }}>
-                      $0.70
+                      TOP PAY
                     </span>
-                    <span className="text-2xl text-rogue-silver">/mile</span>
                   </div>
                   <p className="text-rogue-silver mt-4 text-lg max-w-md">
-                    Up to $0.65&ndash;$0.70 per mile on dedicated Dry Van routes.
+                    Competitive per-mile rates on dedicated Dry Van routes.
                     Consistent freight means consistent paychecks.
                   </p>
                 </div>
                 <div className="flex-1 grid grid-cols-2 gap-4 w-full max-w-sm">
                   {[
-                    { label: 'Weekly Avg.', value: '$3,000+' },
-                    { label: 'Miles/Week', value: '2,500+' },
+                    { label: 'Routes', value: 'Dedicated' },
+                    { label: 'States', value: '48' },
                     { label: 'Structure', value: '1099' },
                     { label: 'Payment', value: 'Weekly' },
                   ].map((stat) => (
@@ -286,7 +285,7 @@ export default function BenefitsPage() {
           <div className="max-w-2xl mx-auto">
             {[
               'Valid CDL Class A license',
-              '1+ year of verifiable driving experience',
+              '2+ years of verifiable driving experience',
               'Clean driving record',
               'Knowledge of DOT regulations & ELD',
               'Professional attitude and reliability',
@@ -314,7 +313,7 @@ export default function BenefitsPage() {
               LIKE WHAT YOU SEE?
             </h2>
             <p className="text-white/80 text-lg mb-8">
-              Start earning up to $0.70/mile with dedicated routes and modern equipment. Takes 30 seconds to apply.
+              Start earning top industry pay with dedicated routes and modern equipment. Takes 30 seconds to apply.
             </p>
             <Link
               href="/apply"

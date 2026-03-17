@@ -79,8 +79,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex items-baseline gap-3 mb-6"
               >
-                <span className="text-4xl sm:text-5xl font-black text-white">$0.70</span>
-                <span className="text-rogue-silver text-lg">/mile</span>
+                <span className="text-4xl sm:text-5xl font-black text-white">Top Pay</span>
                 <span className="text-rogue-silver text-sm">&#8226; Dedicated Routes &#8226; 48 States</span>
               </motion.div>
 
@@ -91,7 +90,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-rogue-silver text-lg max-w-xl mb-8 leading-relaxed"
               >
-                Join the 800+ truck fleet with modern 2021&ndash;2026 equipment,
+                Join the 400+ truck fleet with modern 2024&ndash;2026 equipment,
                 predictable freight, and a team that actually values its drivers.
               </motion.p>
 
@@ -156,10 +155,10 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-rogue-red/5 via-transparent to-rogue-red/5" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            <AnimatedCounter end={800} suffix="+" label="Trucks in Fleet" />
+            <AnimatedCounter end={400} suffix="+" label="Trucks in Fleet" />
             <AnimatedCounter end={48} label="States Covered" />
-            <AnimatedCounter end={0.70} prefix="$" label="Per Mile (up to)" decimals={2} />
             <AnimatedCounter end={2026} label="Newest Equipment" />
+            <AnimatedCounter end={24} suffix="/7" label="Driver Support" />
           </div>
         </div>
       </section>
@@ -188,7 +187,7 @@ export default function HomePage() {
                   </svg>
                 ),
                 title: 'Top Pay',
-                desc: 'Up to $0.70/mile on dedicated routes. Predictable income, no guessing.',
+                desc: 'Competitive pay on dedicated routes. Predictable income, no guessing.',
               },
               {
                 icon: (
@@ -197,7 +196,7 @@ export default function HomePage() {
                   </svg>
                 ),
                 title: 'Modern Fleet',
-                desc: '2021\u20132026 trucks and trailers. Clean, reliable equipment you can count on.',
+                desc: '2024\u20132026 trucks and trailers. Clean, reliable equipment you can count on.',
               },
               {
                 icon: (
@@ -224,7 +223,7 @@ export default function HomePage() {
                   </svg>
                 ),
                 title: 'Fuel Card',
-                desc: 'Company fuel card with discounts. Keep more of your hard-earned money.',
+                desc: 'Company fuel card included. Keep more of your hard-earned money.',
               },
               {
                 icon: (
@@ -263,7 +262,7 @@ export default function HomePage() {
       >
         <div className="text-center">
           <h3 className="text-3xl sm:text-4xl font-black text-white" style={{ fontFamily: 'var(--font-oswald)' }}>
-            800+ TRUCKS. <span className="text-rogue-red">49 STATES.</span>
+            400+ TRUCKS. <span className="text-rogue-red">48 STATES.</span>
           </h3>
         </div>
       </PhotoBanner>
@@ -290,7 +289,7 @@ export default function HomePage() {
               READY TO GO <span className="underline decoration-4 underline-offset-4">ROGUE</span>?
             </h2>
             <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              800+ trucks. 48 states. Up to $0.70/mile. Modern equipment. Dedicated routes.
+              400+ trucks. 48 states. Competitive pay. Modern equipment. Dedicated routes.
               Your next chapter starts here.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

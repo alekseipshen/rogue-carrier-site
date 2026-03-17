@@ -262,7 +262,7 @@ export default function ApplyPage() {
                         className="w-full bg-rogue-gray border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rogue-red/50 focus:ring-1 focus:ring-rogue-red/50 transition-all appearance-none"
                       >
                         <option value="" disabled>Select experience</option>
-                        <option value="1-2">1-2 years</option>
+                        <option value="2-3">2-3 years</option>
                         <option value="3-5">3-5 years</option>
                         <option value="5-10">5-10 years</option>
                         <option value="10+">10+ years</option>

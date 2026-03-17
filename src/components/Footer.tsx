@@ -19,7 +19,7 @@ export default function Footer() {
               className="h-14 w-auto mb-4"
             />
             <p className="text-rogue-silver text-sm leading-relaxed mt-4">
-              Freight Without Limits. 800+ trucks delivering across 48 states with modern equipment and dedicated routes.
+              Freight Without Limits. 400+ trucks delivering across 48 states with modern equipment and dedicated routes.
             </p>
           </div>
 
@@ -67,11 +67,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@roguecarrierinc.com" className="hover:text-rogue-red transition-colors flex items-center gap-2">
+                <a href="mailto:hr@roguecarrierinc.com" className="hover:text-rogue-red transition-colors flex items-center gap-2">
                   <svg className="w-4 h-4 text-rogue-red flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  info@roguecarrierinc.com
+                  hr@roguecarrierinc.com
                 </a>
               </li>
               <li className="flex items-start gap-2 pt-1">
@@ -88,7 +88,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold uppercase tracking-wider text-sm mb-4">Ready to Drive?</h3>
             <p className="text-rogue-silver text-sm mb-4">
-              Join 800+ drivers earning up to $0.70/mile on dedicated routes.
+              Join 400+ drivers earning competitive pay on dedicated routes.
             </p>
             <Link
               href="/apply"

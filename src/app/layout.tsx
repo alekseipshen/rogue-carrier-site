@@ -17,9 +17,9 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: 'Rogue Carrier | CDL Class A Drivers Wanted — Up to $0.70/mile',
+  title: 'Rogue Carrier | CDL Class A Drivers Wanted — Top Industry Pay',
   description:
-    'Join Rogue Carrier — 800+ trucks, dedicated Dry Van routes across 48 states. Earn up to $0.70/mile with modern 2021-2026 equipment. Apply now!',
+    'Join Rogue Carrier — 400+ trucks, dedicated Dry Van routes across 48 states. Competitive pay with modern 2024-2026 equipment. Apply now!',
   keywords: 'CDL Class A, truck driver jobs, Rogue Carrier, dedicated routes, dry van, OTR driving',
   icons: {
     icon: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Rogue Carrier — Freight Without Limits',
-    description: 'Join 800+ drivers earning up to $0.70/mile on dedicated routes across 48 states.',
+    description: 'Join 400+ drivers earning competitive pay on dedicated routes across 48 states.',
     type: 'website',
   },
 };

@@ -78,8 +78,8 @@ export default function AboutPage() {
               },
               {
                 year: '2026',
-                title: '800+ Strong',
-                desc: 'Today we run 800+ trucks with 2021\u20132026 equipment. Added 200 new leased trucks. The rogue spirit is stronger than ever.',
+                title: '400+ Strong',
+                desc: 'Today we run 400+ trucks with 2024\u20132026 equipment. The rogue spirit is stronger than ever.',
               },
             ].map((item, i) => (
               <ScrollReveal key={item.year} delay={i * 0.15} direction={i % 2 === 0 ? 'left' : 'right'}>
@@ -106,10 +106,10 @@ export default function AboutPage() {
       <section className="py-20 bg-rogue-dark border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            <AnimatedCounter end={800} suffix="+" label="Trucks in Fleet" />
+            <AnimatedCounter end={400} suffix="+" label="Trucks in Fleet" />
             <AnimatedCounter end={150} suffix="K" label="Shipments per Year" />
             <AnimatedCounter end={48} label="States Covered" />
-            <AnimatedCounter end={200} suffix="+" label="New Trucks in 2026" />
+            <AnimatedCounter end={2026} label="Modern Fleet" />
           </div>
         </div>
       </section>
@@ -156,7 +156,7 @@ export default function AboutPage() {
               {
                 num: '06',
                 title: 'Growth',
-                desc: 'From startup to 800+ trucks in 6 years. We grow together \u2014 and there\'s room for you.',
+                desc: 'From startup to 400+ trucks in 6 years. We grow together \u2014 and there\'s room for you.',
               },
             ].map((value, i) => (
               <ScrollReveal key={value.num} delay={i * 0.1}>

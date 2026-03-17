@@ -98,7 +98,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-white font-bold uppercase tracking-wider text-sm mb-4">Email</h3>
                     <a
-                      href="mailto:info@roguecarrierinc.com"
+                      href="mailto:hr@roguecarrierinc.com"
                       className="flex items-center gap-4 p-4 rounded-xl bg-rogue-dark border border-white/5 hover:border-rogue-red/30 transition-all group"
                     >
                       <div className="w-12 h-12 bg-rogue-red/10 rounded-xl flex items-center justify-center group-hover:bg-rogue-red/20 transition-colors">
@@ -107,7 +107,7 @@ export default function ContactPage() {
                         </svg>
                       </div>
                       <div>
-                        <div className="text-white font-bold">info@roguecarrierinc.com</div>
+                        <div className="text-white font-bold">hr@roguecarrierinc.com</div>
                         <div className="text-rogue-silver text-sm">General Inquiries</div>
                       </div>
                     </a>
@@ -137,18 +137,11 @@ export default function ContactPage() {
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
                           <span className="text-rogue-silver">Monday &ndash; Friday</span>
-                          <span className="text-white font-medium">8:00 AM &ndash; 6:00 PM CT</span>
+                          <span className="text-white font-medium">9:00 AM &ndash; 5:00 PM CT</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-rogue-silver">Saturday</span>
-                          <span className="text-white font-medium">9:00 AM &ndash; 2:00 PM CT</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-rogue-silver">Sunday</span>
+                          <span className="text-rogue-silver">Saturday &ndash; Sunday</span>
                           <span className="text-rogue-silver">Closed</span>
-                        </div>
-                        <div className="pt-2 mt-2 border-t border-white/5">
-                          <span className="text-rogue-red text-xs font-medium">24/7 Dispatch & Roadside Support</span>
                         </div>
                       </div>
                     </div>
