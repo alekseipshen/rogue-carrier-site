@@ -19,7 +19,7 @@ export default function QuickApplyForm() {
     setSubmitted(true);
     // Redirect to Tenstreet after 2s
     setTimeout(() => {
-      window.open('https://www.roguecarrierinc.com/', '_blank');
+      window.open('https://intelliapp.driverapponline.com/c/roguecarrierinc?r=roguecarrierinc.com', '_blank');
     }, 2000);
   };
 

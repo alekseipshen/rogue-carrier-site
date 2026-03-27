@@ -34,7 +34,7 @@ export default function ApplyPage() {
     setSubmitted(true);
     // TODO: save data to backend, then redirect to Tenstreet
     setTimeout(() => {
-      window.open('https://www.roguecarrierinc.com/', '_blank');
+      window.open('https://intelliapp.driverapponline.com/c/roguecarrierinc?r=roguecarrierinc.com', '_blank');
     }, 3000);
   };
 
