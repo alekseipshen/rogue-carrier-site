@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import Link from 'next/link';
 import PhotoBanner from '@/components/PhotoBanner';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -174,6 +175,53 @@ export default function AboutPage() {
                 </motion.div>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ LIFE ON THE ROAD ============ */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Photo */}
+            <ScrollReveal direction="left">
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/4] max-h-[500px]">
+                <Image
+                  src="/images/fleet/driver-with-dog.jpg"
+                  alt="Rogue Carrier driver with his companion on the road"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-white/90 text-lg font-semibold italic">
+                    &ldquo;Miles are better together.&rdquo;
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Text */}
+            <ScrollReveal direction="right">
+              <span className="text-rogue-red text-sm font-bold uppercase tracking-widest">Life on the Road</span>
+              <h2
+                className="text-4xl sm:text-5xl font-black mt-3 mb-6"
+                style={{ fontFamily: 'var(--font-oswald)' }}
+              >
+                MORE THAN <span className="text-rogue-red">A JOB</span>
+              </h2>
+              <p className="text-rogue-silver text-lg leading-relaxed mb-6">
+                At Rogue Carrier, we know that trucking is a lifestyle. Our drivers bring
+                their passions, their pets, and their personalities on the road &mdash; and we
+                wouldn&apos;t have it any other way.
+              </p>
+              <p className="text-rogue-silver text-lg leading-relaxed">
+                With dedicated routes and modern equipment, you get the freedom to make
+                the road your own &mdash; with the stability and support of a company that
+                treats you like family.
+              </p>
+            </ScrollReveal>
           </div>
         </div>
       </section>

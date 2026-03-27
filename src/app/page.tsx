@@ -10,6 +10,7 @@ import Image from 'next/image';
 import QuickApplyForm from '@/components/QuickApplyForm';
 import FleetGallery from '@/components/FleetGallery';
 import PhotoBanner from '@/components/PhotoBanner';
+import DriverStories from '@/components/DriverStories';
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -253,6 +254,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ============ DRIVER STORIES ============ */}
+      <DriverStories />
 
       {/* ============ PHOTO DIVIDER ============ */}
       <PhotoBanner
