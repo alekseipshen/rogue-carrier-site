@@ -12,12 +12,30 @@ export default function QuickApplyForm() {
     cdl: 'yes',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: integrate with backend/Tenstreet
+    setSubmitting(true);
+
+    try {
+      await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'quick', ...formData }),
+      });
+    } catch {
+      // Continue even if email fails — don't block the user
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'generate_lead',
+      form_location: 'homepage_quick',
+    });
+
+    setSubmitting(false);
     setSubmitted(true);
-    // Redirect to Tenstreet after 2s
     setTimeout(() => {
       window.open('https://intelliapp.driverapponline.com/c/roguecarrierinc?r=roguecarrierinc.com', '_blank');
     }, 2000);
@@ -124,7 +142,7 @@ export default function QuickApplyForm() {
         whileTap={{ scale: 0.98 }}
         className="w-full mt-6 bg-rogue-red hover:bg-rogue-red-light text-white font-bold uppercase tracking-wider py-4 rounded-lg transition-all duration-300 pulse-red text-lg"
       >
-        Truck Yeah! Apply Now
+        {submitting ? 'Sending...' : 'Truck Yeah! Apply Now'}
       </motion.button>
     </motion.form>
   );

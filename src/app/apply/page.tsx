@@ -29,10 +29,30 @@ export default function ApplyPage() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+
+    try {
+      await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'full', ...formData }),
+      });
+    } catch {
+      // Continue even if email fails
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'generate_lead',
+      form_location: 'apply_full',
+    });
+
+    setSubmitting(false);
     setSubmitted(true);
-    // TODO: save data to backend, then redirect to Tenstreet
     setTimeout(() => {
       window.open('https://intelliapp.driverapponline.com/c/roguecarrierinc?r=roguecarrierinc.com', '_blank');
     }, 3000);
@@ -307,7 +327,7 @@ export default function ApplyPage() {
                       whileTap={{ scale: 0.98 }}
                       className="flex-[2] bg-rogue-red hover:bg-rogue-red-light text-white font-bold uppercase tracking-wider py-4 rounded-lg transition-all text-lg pulse-red"
                     >
-                      Submit Application
+                      {submitting ? 'Sending...' : 'Submit Application'}
                     </motion.button>
                   </div>
                 </motion.div>
