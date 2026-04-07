@@ -64,7 +64,7 @@ export default function ContactPage() {
                     <h3 className="text-white font-bold uppercase tracking-wider text-sm mb-4">Call Us</h3>
                     <div className="space-y-3">
                       <a
-                        href="tel:7737183282"
+                        href="tel:+17737183282"
                         className="flex items-center gap-4 p-4 rounded-xl bg-rogue-dark border border-white/5 hover:border-rogue-red/30 transition-all group"
                       >
                         <div className="w-12 h-12 bg-rogue-red/10 rounded-xl flex items-center justify-center group-hover:bg-rogue-red/20 transition-colors">
@@ -78,7 +78,7 @@ export default function ContactPage() {
                         </div>
                       </a>
                       <a
-                        href="tel:7737183354"
+                        href="tel:+17737183354"
                         className="flex items-center gap-4 p-4 rounded-xl bg-rogue-dark border border-white/5 hover:border-rogue-red/30 transition-all group"
                       >
                         <div className="w-12 h-12 bg-rogue-red/10 rounded-xl flex items-center justify-center group-hover:bg-rogue-red/20 transition-colors">

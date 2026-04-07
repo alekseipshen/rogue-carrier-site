@@ -113,13 +113,13 @@ export default function HomePage() {
                   </svg>
                 </Link>
                 <a
-                  href="tel:7737183282"
+                  href="tel:+17737183282"
                   className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold uppercase tracking-wider px-8 py-4 rounded-lg transition-all duration-300 text-lg"
                 >
                   <svg className="w-5 h-5 text-rogue-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  Call Now
+                  (773) 718-3282
                 </a>
               </motion.div>
             </div>
@@ -308,10 +308,13 @@ export default function HomePage() {
                 </svg>
               </Link>
               <a
-                href="tel:7737183282"
+                href="tel:+17737183282"
                 className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-bold uppercase tracking-wider px-10 py-4 rounded-lg hover:bg-white/10 transition-all duration-300 text-lg"
               >
-                Call (773) 718-3282
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                (773) 718-3282
               </a>
             </div>
           </ScrollReveal>
