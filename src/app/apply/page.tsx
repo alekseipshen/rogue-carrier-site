@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
 import Image from 'next/image';
 import { formatPhone } from '@/utils/formatPhone';
+import RedirectCountdown from '@/components/RedirectCountdown';
 
 const steps = [
   { id: 1, label: 'Basic Info' },
@@ -53,53 +54,12 @@ export default function ApplyPage() {
 
     setSubmitting(false);
     setSubmitted(true);
-    setTimeout(() => {
-      window.open('https://intelliapp.driverapponline.com/c/roguecarrierinc?r=roguecarrierinc.com', '_blank');
-    }, 3000);
   };
 
   if (submitted) {
     return (
       <section className="min-h-screen flex items-center justify-center px-4">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center max-w-lg"
-        >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
-            className="w-24 h-24 bg-rogue-red/20 rounded-full flex items-center justify-center mx-auto mb-6"
-          >
-            <svg className="w-12 h-12 text-rogue-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </motion.div>
-          <h1
-            className="text-4xl sm:text-5xl font-black text-white mb-4"
-            style={{ fontFamily: 'var(--font-oswald)' }}
-          >
-            APPLICATION <span className="text-rogue-red">RECEIVED!</span>
-          </h1>
-          <p className="text-rogue-silver text-lg mb-4">
-            Thank you, {formData.firstName}! Your pre-screen application has been submitted.
-          </p>
-          <p className="text-rogue-silver">
-            You&apos;ll be redirected to complete the full Tenstreet application. Our team will also reach out within 24 hours.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="tel:+17737183282"
-              className="inline-flex items-center gap-2 bg-rogue-red text-white font-bold uppercase tracking-wider px-6 py-3 rounded-lg"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              (773) 718-3282
-            </a>
-          </div>
-        </motion.div>
+        <RedirectCountdown name={formData.firstName} />
       </section>
     );
   }
