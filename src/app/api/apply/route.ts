@@ -67,7 +67,12 @@ export async function POST(request: Request) {
 
     await getResend().emails.send({
       from: 'Rogue Carrier Website <noreply@roguecarrierinc.com>',
-      to: 'hr@roguecarrierinc.com',
+      to: [
+        'hr@roguecarrierinc.com',
+        'daiva@roguecarrierinc.com',
+        'arthur@roguecarrierinc.com',
+        'juozas@roguecarrierinc.com',
+      ],
       subject: `New Driver Application: ${fullName} — ${data.phone}`,
       html,
     });
