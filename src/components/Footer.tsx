@@ -101,9 +101,17 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-rogue-silver text-xs">
-            &copy; {new Date().getFullYear()} Rogue Carrier Inc. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p className="text-rogue-silver text-xs">
+              &copy; {new Date().getFullYear()} Rogue Carrier Inc. All rights reserved.
+            </p>
+            <Link
+              href="/dashcam-policy"
+              className="text-rogue-silver hover:text-rogue-red transition-colors text-xs"
+            >
+              Dash Cam &amp; Biometric Data Policy
+            </Link>
+          </div>
           <div className="flex items-center gap-6">
             <a
               href="https://www.facebook.com/people/Rogue-Carrier/61582010114565/"
