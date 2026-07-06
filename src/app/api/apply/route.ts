@@ -1,5 +1,35 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { Pool } from 'pg';
+
+const LEAD_SITE = 'rogue-carrier-site';
+
+// schema.table — must be set in env, validated at module load
+const LEADS_TABLE = process.env.LEADS_TABLE;
+const TABLE_RE = /^[a-z_][a-z0-9_]*\.[a-z_][a-z0-9_]*$/i;
+if (LEADS_TABLE && !TABLE_RE.test(LEADS_TABLE)) {
+  throw new Error(`Invalid LEADS_TABLE format: ${LEADS_TABLE}`);
+}
+
+// Singleton pool across warm invocations.
+// We strip ?sslmode=... from the connection string because `pg` parses it from
+// the URL and enforces cert verification, overriding our explicit ssl option.
+// Railway's PG proxy uses a self-signed cert chain.
+let pool: Pool | null = null;
+function getPool(): Pool | null {
+  if (!pool && process.env.DATABASE_URL) {
+    const cleaned = process.env.DATABASE_URL.replace(/([?&])sslmode=[^&]*(&|$)/g, (_m, p1, p2) =>
+      p1 === '?' && p2 === '' ? '' : p1 === '?' ? '?' : p2,
+    );
+    pool = new Pool({
+      connectionString: cleaned,
+      ssl: { rejectUnauthorized: false },
+      max: 3,
+      idleTimeoutMillis: 10_000,
+    });
+  }
+  return pool;
+}
 
 function getResend() {
   if (!process.env.RESEND_API_KEY) {
@@ -19,6 +49,44 @@ interface ApplyRequest {
   cdl?: string;
   currentLocation?: string;
   availability?: string;
+}
+
+async function insertLead(request: Request, data: ApplyRequest, fullName: string | undefined): Promise<void> {
+  const p = getPool();
+  if (!p || !LEADS_TABLE) return;
+  const ua = request.headers.get('user-agent');
+  const xff = request.headers.get('x-forwarded-for');
+  const ip = xff ? xff.split(',')[0].trim() : null;
+  const extra: Record<string, unknown> = {};
+  if (data.formType) extra.form_type = data.formType;
+  if (data.firstName) extra.first_name = data.firstName;
+  if (data.lastName) extra.last_name = data.lastName;
+  if (data.experience) extra.experience = data.experience;
+  if (data.cdl) extra.cdl = data.cdl;
+  if (data.currentLocation) extra.current_location = data.currentLocation;
+  if (data.availability) extra.availability = data.availability;
+  const extraJson = Object.keys(extra).length ? JSON.stringify(extra) : null;
+  await p.query(
+    `INSERT INTO ${LEADS_TABLE}
+       (name, phone, email, service_slug, service_name, city_slug, city_name, message, source, page, user_agent, ip, site, extra)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14::jsonb)`,
+    [
+      fullName || null,
+      data.phone || null,
+      data.email || null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      ua,
+      ip,
+      LEAD_SITE,
+      extraJson,
+    ],
+  );
 }
 
 export async function POST(request: Request) {
@@ -65,7 +133,7 @@ export async function POST(request: Request) {
       </div>
     `;
 
-    await getResend().emails.send({
+    const send = getResend().emails.send({
       from: 'Rogue Carrier Website <noreply@roguecarrierinc.com>',
       to: [
         'hr@roguecarrierinc.com',
@@ -77,6 +145,12 @@ export async function POST(request: Request) {
       subject: `New Driver Application: ${fullName} — ${data.phone}`,
       html,
     });
+
+    const [, pgResult] = await Promise.allSettled([send, insertLead(request, data, fullName)]);
+    if (pgResult.status === 'rejected') {
+      console.error('pg insert failed:', pgResult.reason);
+    }
+    await send;
 
     return NextResponse.json({ success: true });
   } catch (error) {
