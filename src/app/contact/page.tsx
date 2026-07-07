@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
 import Image from 'next/image';
 import { formatPhone } from '@/utils/formatPhone';
+import A2PReviewNotice from '@/components/A2PReviewNotice';
+import { A2P_REVIEW_MODE } from '@/config/a2p';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -169,7 +171,9 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <ScrollReveal direction="right">
-                {submitted ? (
+                {A2P_REVIEW_MODE ? (
+                  <A2PReviewNotice title="Send Us a Message" />
+                ) : submitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}

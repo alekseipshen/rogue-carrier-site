@@ -6,6 +6,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import Image from 'next/image';
 import { formatPhone } from '@/utils/formatPhone';
 import RedirectCountdown from '@/components/RedirectCountdown';
+import A2PReviewNotice from '@/components/A2PReviewNotice';
+import { A2P_REVIEW_MODE } from '@/config/a2p';
 
 const steps = [
   { id: 1, label: 'Basic Info' },
@@ -95,6 +97,13 @@ export default function ApplyPage() {
       </section>
 
       {/* ============ FORM ============ */}
+      {A2P_REVIEW_MODE ? (
+        <section className="py-12">
+          <div className="max-w-2xl mx-auto px-4">
+            <A2PReviewNotice title="Start Your Application" />
+          </div>
+        </section>
+      ) : (
       <section className="py-12 relative">
         <div className="max-w-2xl mx-auto px-4">
           {/* Progress bar */}
@@ -323,6 +332,7 @@ export default function ApplyPage() {
           </ScrollReveal>
         </div>
       </section>
+      )}
     </>
   );
 }

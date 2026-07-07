@@ -111,6 +111,18 @@ export default function Footer() {
             >
               Dash Cam &amp; Biometric Data Policy
             </Link>
+            <Link
+              href="/privacy-policy"
+              className="text-rogue-silver hover:text-rogue-red transition-colors text-xs"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/sms-terms"
+              className="text-rogue-silver hover:text-rogue-red transition-colors text-xs"
+            >
+              SMS Terms
+            </Link>
           </div>
           <div className="flex items-center gap-6">
             <a

@@ -8,9 +8,11 @@ import ScrollReveal from '@/components/ScrollReveal';
 import ParticleField from '@/components/ParticleField';
 import Image from 'next/image';
 import QuickApplyForm from '@/components/QuickApplyForm';
+import A2PReviewNotice from '@/components/A2PReviewNotice';
 import FleetGallery from '@/components/FleetGallery';
 import PhotoBanner from '@/components/PhotoBanner';
 import DriverStories from '@/components/DriverStories';
+import { A2P_REVIEW_MODE } from '@/config/a2p';
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -126,7 +128,7 @@ export default function HomePage() {
 
             {/* Right: Quick Apply Form */}
             <div className="hidden lg:block">
-              <QuickApplyForm />
+              {A2P_REVIEW_MODE ? <A2PReviewNotice /> : <QuickApplyForm />}
             </div>
           </div>
         </motion.div>
@@ -323,7 +325,7 @@ export default function HomePage() {
 
       {/* ============ MOBILE FORM (shown below hero on mobile) ============ */}
       <section className="lg:hidden py-12 px-4 bg-rogue-dark">
-        <QuickApplyForm />
+        {A2P_REVIEW_MODE ? <A2PReviewNotice /> : <QuickApplyForm />}
       </section>
     </>
   );

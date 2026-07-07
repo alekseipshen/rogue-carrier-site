@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter, Oswald } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { A2P_REVIEW_MODE } from '@/config/a2p';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -69,6 +71,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+
+        {/* GHL / LeadConnector text opt-in widget — shown only during A2P review mode */}
+        {A2P_REVIEW_MODE && (
+          <Script
+            id="ghl-text-widget"
+            src="https://widgets.leadconnectorhq.com/loader.js"
+            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+            data-widget-id="6a4cecb8ffb5ea41f2d95417"
+            data-source="WEB_USER"
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );
