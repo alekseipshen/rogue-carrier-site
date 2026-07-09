@@ -12,4 +12,4 @@
  * Google Ads campaigns. The Privacy Policy and SMS Terms pages are permanent and
  * stay live regardless of this flag.
  */
-export const A2P_REVIEW_MODE = true;
+export const A2P_REVIEW_MODE = false;
