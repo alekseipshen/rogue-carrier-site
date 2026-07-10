@@ -139,7 +139,6 @@ export async function POST(request: Request) {
         'hr@roguecarrierinc.com',
         'daiva@roguecarrierinc.com',
         'arthur@roguecarrierinc.com',
-        'juozas@roguecarrierinc.com',
         'al.pshen.marketing@gmail.com',
       ],
       subject: `New Driver Application: ${fullName} — ${data.phone}`,
