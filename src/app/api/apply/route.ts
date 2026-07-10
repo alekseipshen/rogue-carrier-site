@@ -136,9 +136,8 @@ export async function POST(request: Request) {
     const send = getResend().emails.send({
       from: 'Rogue Carrier Website <noreply@roguecarrierinc.com>',
       to: [
-        'hr@roguecarrierinc.com',
-        'daiva@roguecarrierinc.com',
-        'arthur@roguecarrierinc.com',
+        'iana@roguecarrierinc.com',
+        'gaby@roguecarrierinc.com',
         'al.pshen.marketing@gmail.com',
       ],
       subject: `New Driver Application: ${fullName} — ${data.phone}`,
