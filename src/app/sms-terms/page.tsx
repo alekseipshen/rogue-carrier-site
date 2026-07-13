@@ -14,9 +14,42 @@ export default function SmsTermsPage() {
         <h1 className="text-4xl sm:text-5xl font-black mb-3" style={{ fontFamily: 'var(--font-oswald)' }}>
           SMS TERMS &amp; <span className="text-rogue-red">CONDITIONS</span>
         </h1>
-        <p className="text-rogue-silver text-sm mb-10">Last updated: July 7, 2026</p>
+        <p className="text-rogue-silver text-sm mb-10">Last updated: July 13, 2026</p>
 
         <div className="space-y-8 text-rogue-silver leading-relaxed">
+          <div>
+            <h2 className="text-xl font-bold text-white mb-3">Standard Messaging Disclosures</h2>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Message and data rates may apply.</li>
+              <li>You can opt out at any time by texting &ldquo;STOP.&rdquo;</li>
+              <li>
+                For assistance, text &ldquo;HELP&rdquo; or visit our{' '}
+                <Link href="/privacy-policy" className="text-rogue-red hover:underline">
+                  Privacy Policy
+                </Link>{' '}
+                page.
+              </li>
+              <li>Message frequency may vary depending on service.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-white mb-3">SMS Opt-In &amp; Opt-Out</h2>
+            <p>
+              By opting into SMS from a web form or other medium, you are agreeing to receive SMS
+              messages from Rogue Capital Group Corp. This includes SMS messages for conversations
+              (external), conversations (between employees). Message frequency varies. Message and data
+              rates may apply. See privacy policy at{' '}
+              <a
+                href="https://www.roguecarrierinc.com/privacy-policy"
+                className="text-rogue-red hover:underline"
+              >
+                https://www.roguecarrierinc.com/privacy-policy
+              </a>
+              . Message HELP for help. Reply STOP to any message to opt out.
+            </p>
+          </div>
+
           <div>
             <h2 className="text-xl font-bold text-white mb-3">Program Description</h2>
             <p>
