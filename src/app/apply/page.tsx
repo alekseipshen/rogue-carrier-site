@@ -200,6 +200,24 @@ export default function ApplyPage() {
                     </div>
                   </div>
 
+                  <label className="flex items-start gap-2.5 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={smsConsent}
+                      onChange={(e) => setSmsConsent(e.target.checked)}
+                      className="accent-rogue-red mt-0.5 flex-shrink-0"
+                    />
+                    <span className="text-rogue-silver/80 text-xs leading-relaxed">
+                      I agree to receive SMS notifications regarding my application from Rogue Capital
+                      Group Corp. Reply STOP to opt-out; Reply HELP for help; Message and data rates
+                      apply; Messaging frequency may vary. See{' '}
+                      <a href="/privacy-policy" className="underline hover:text-white" target="_blank">Privacy Policy</a>
+                      {' '}and{' '}
+                      <a href="/sms-terms" className="underline hover:text-white" target="_blank">Terms of Service</a>
+                      {' '}for additional details.
+                    </span>
+                  </label>
+
                   <motion.button
                     type="button"
                     onClick={() => {
@@ -282,24 +300,6 @@ export default function ApplyPage() {
                       </select>
                     </div>
                   </div>
-
-                  <label className="flex items-start gap-2.5 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={smsConsent}
-                      onChange={(e) => setSmsConsent(e.target.checked)}
-                      className="accent-rogue-red mt-0.5 flex-shrink-0"
-                    />
-                    <span className="text-rogue-silver/80 text-xs leading-relaxed">
-                      I agree to receive SMS notifications regarding my application from Rogue Capital
-                      Group Corp. Reply STOP to opt-out; Reply HELP for help; Message and data rates
-                      apply; Messaging frequency may vary. See{' '}
-                      <a href="/privacy-policy" className="underline hover:text-white" target="_blank">Privacy Policy</a>
-                      {' '}and{' '}
-                      <a href="/sms-terms" className="underline hover:text-white" target="_blank">Terms of Service</a>
-                      {' '}for additional details.
-                    </span>
-                  </label>
 
                   <div className="flex gap-4">
                     <button
