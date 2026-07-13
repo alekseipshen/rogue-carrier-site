@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'SMS Terms & Conditions | Rogue Carrier',
   description:
-    'Terms and conditions for the Rogue Carrier Inc SMS / text messaging program: message frequency, rates, and how to opt out.',
+    'Terms and conditions for the Rogue Capital Group Corp SMS / text messaging program: message frequency, rates, and how to opt out.',
 };
 
 export default function SmsTermsPage() {
@@ -53,7 +53,7 @@ export default function SmsTermsPage() {
           <div>
             <h2 className="text-xl font-bold text-white mb-3">Program Description</h2>
             <p>
-              When you opt in, you agree to receive recurring SMS/text messages from Rogue Carrier Inc
+              When you opt in, you agree to receive recurring SMS/text messages from Rogue Capital Group Corp
               regarding your job application, recruiting, interview and onboarding scheduling, hiring
               updates, and related employment opportunities. Consent to receive text messages is not a
               condition of applying for a position or of any purchase.
@@ -106,7 +106,7 @@ export default function SmsTermsPage() {
           <div>
             <h2 className="text-xl font-bold text-white mb-3">Contact Us</h2>
             <p>
-              Rogue Carrier Inc
+              Rogue Capital Group Corp
               <br />
               1312 Marquette Dr, Ste E, Romeoville, IL 60446
               <br />

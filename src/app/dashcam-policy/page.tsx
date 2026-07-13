@@ -5,12 +5,12 @@ import ScrollReveal from '@/components/ScrollReveal';
 export const metadata: Metadata = {
   title: 'Dash Cam & Biometric Data Policy | Rogue Carrier',
   description:
-    'How Rogue Carrier Inc uses in-cab Samsara dash cams, what data is collected, how it is secured, our retention schedule, and your right to consent and revoke.',
+    'How Rogue Capital Group Corp uses in-cab Samsara dash cams, what data is collected, how it is secured, our retention schedule, and your right to consent and revoke.',
   alternates: { canonical: '/dashcam-policy' },
   openGraph: {
     title: 'Dash Cam & Biometric Data Policy | Rogue Carrier',
     description:
-      'How Rogue Carrier Inc uses in-cab Samsara dash cams, what data is collected, how it is secured, our retention schedule, and your right to consent and revoke.',
+      'How Rogue Capital Group Corp uses in-cab Samsara dash cams, what data is collected, how it is secured, our retention schedule, and your right to consent and revoke.',
     type: 'website',
   },
 };
@@ -66,7 +66,7 @@ export default function DashCamPolicyPage() {
               DASH CAM &amp; <span className="text-rogue-red">BIOMETRIC DATA</span> POLICY
             </h1>
             <p className="text-rogue-silver text-lg leading-relaxed">
-              This disclosure explains how Rogue Carrier Inc uses in-cab Samsara dash cams, what is
+              This disclosure explains how Rogue Capital Group Corp uses in-cab Samsara dash cams, what is
               recorded, how that data is protected, and the rights you have as a driver. We publish it
               openly so every member of our team knows exactly what to expect.
             </p>
@@ -184,7 +184,7 @@ export default function DashCamPolicyPage() {
               </div>
             </div>
             <p className="text-rogue-silver/60 text-xs leading-relaxed mt-8">
-              Rogue Carrier Inc &middot; 1312 Marquette Dr, Ste E, Romeoville, IL 60446. This page is
+              Rogue Capital Group Corp &middot; 1312 Marquette Dr, Ste E, Romeoville, IL 60446. This page is
               provided for general informational purposes and reflects our current data practices; it
               does not constitute legal advice.
             </p>

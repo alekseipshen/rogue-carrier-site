@@ -291,7 +291,7 @@ export default function ApplyPage() {
                       className="accent-rogue-red mt-0.5 flex-shrink-0"
                     />
                     <span className="text-rogue-silver/80 text-xs leading-relaxed">
-                      I agree to receive SMS from Rogue Carrier Inc about my application (next steps,
+                      I agree to receive SMS from Rogue Capital Group Corp about my application (next steps,
                       scheduling). Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out.{' '}
                       <a href="/privacy-policy" className="underline hover:text-white" target="_blank">Privacy Policy</a>
                       {' '}&amp;{' '}

@@ -103,7 +103,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
             <p className="text-rogue-silver text-xs">
-              &copy; {new Date().getFullYear()} Rogue Carrier Inc. All rights reserved.
+              &copy; {new Date().getFullYear()} Rogue Capital Group Corp. All rights reserved.
             </p>
             <Link
               href="/dashcam-policy"

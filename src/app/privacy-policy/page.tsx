@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Privacy Policy | Rogue Carrier',
   description:
-    'How Rogue Carrier Inc collects, uses, and protects your personal information, including SMS/text messaging opt-in data.',
+    'How Rogue Capital Group Corp collects, uses, and protects your personal information, including SMS/text messaging opt-in data.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -14,11 +14,11 @@ export default function PrivacyPolicyPage() {
         <h1 className="text-4xl sm:text-5xl font-black mb-3" style={{ fontFamily: 'var(--font-oswald)' }}>
           PRIVACY <span className="text-rogue-red">POLICY</span>
         </h1>
-        <p className="text-rogue-silver text-sm mb-10">Last updated: July 7, 2026</p>
+        <p className="text-rogue-silver text-sm mb-10">Last updated: July 13, 2026</p>
 
         <div className="space-y-8 text-rogue-silver leading-relaxed">
           <p>
-            Rogue Carrier Inc (&ldquo;Rogue Carrier,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+            Rogue Capital Group Corp (&ldquo;Rogue Carrier,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
             &ldquo;our&rdquo;) respects your privacy. This Privacy Policy explains what information we
             collect through our website and communications, how we use it, and the choices you have.
           </p>
@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
           <div>
             <h2 className="text-xl font-bold text-white mb-3">SMS / Text Messaging</h2>
             <p className="mb-3">
-              If you opt in to receive text messages from Rogue Carrier Inc, we use your phone number
+              If you opt in to receive text messages from Rogue Capital Group Corp, we use your phone number
               to send messages related to your application, recruiting, and hiring. Message frequency
               varies. Message and data rates may apply. You can opt out at any time by replying{' '}
               <span className="text-white font-semibold">STOP</span>, or reply{' '}
@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
           <div>
             <h2 className="text-xl font-bold text-white mb-3">Contact Us</h2>
             <p>
-              Rogue Carrier Inc
+              Rogue Capital Group Corp
               <br />
               1312 Marquette Dr, Ste E, Romeoville, IL 60446
               <br />
