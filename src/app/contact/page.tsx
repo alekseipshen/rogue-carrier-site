@@ -203,9 +203,10 @@ export default function ContactPage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-rogue-silver text-sm mb-1.5">Phone</label>
+                        <label className="block text-rogue-silver text-sm mb-1.5">Phone *</label>
                         <input
                           type="tel"
+                          required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: formatPhone(e.target.value) })}
                           className="w-full bg-rogue-gray border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rogue-red/50 focus:ring-1 focus:ring-rogue-red/50 transition-all"
