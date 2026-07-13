@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { Pool } from 'pg';
+import { pushDriverLeadToGhl } from '@/lib/ghl';
 
 const LEAD_SITE = 'rogue-carrier-site';
 
@@ -49,6 +50,7 @@ interface ApplyRequest {
   cdl?: string;
   currentLocation?: string;
   availability?: string;
+  smsConsent?: boolean;
 }
 
 async function insertLead(request: Request, data: ApplyRequest, fullName: string | undefined): Promise<void> {
@@ -104,6 +106,7 @@ export async function POST(request: Request) {
       ['Email', data.email || '—'],
       ['CDL Class A', data.cdl === 'yes' ? 'Yes' : 'No'],
       ['Experience', data.experience || '—'],
+      ['SMS Consent', data.smsConsent ? 'Yes' : 'No'],
     ];
 
     if (data.formType === 'full') {
@@ -144,9 +147,26 @@ export async function POST(request: Request) {
       html,
     });
 
-    const [, pgResult] = await Promise.allSettled([send, insertLead(request, data, fullName)]);
+    const ghlPush = pushDriverLeadToGhl({
+      fullName: fullName || '',
+      firstName: data.firstName,
+      lastName: data.lastName,
+      phone: data.phone,
+      email: data.email,
+      formType: data.formType,
+      cdl: data.cdl,
+      experience: data.experience,
+      currentLocation: data.currentLocation,
+      availability: data.availability,
+      smsConsent: data.smsConsent,
+    });
+
+    const [, pgResult, ghlResult] = await Promise.allSettled([send, insertLead(request, data, fullName), ghlPush]);
     if (pgResult.status === 'rejected') {
       console.error('pg insert failed:', pgResult.reason);
+    }
+    if (ghlResult.status === 'rejected') {
+      console.error('GHL push failed:', ghlResult.reason);
     }
     await send;
 

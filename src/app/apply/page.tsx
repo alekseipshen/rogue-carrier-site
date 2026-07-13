@@ -32,6 +32,7 @@ export default function ApplyPage() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
+  const [smsConsent, setSmsConsent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,7 +43,7 @@ export default function ApplyPage() {
       await fetch('/api/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ formType: 'full', ...formData }),
+        body: JSON.stringify({ formType: 'full', ...formData, smsConsent }),
       });
     } catch {
       // Continue even if email fails
@@ -281,6 +282,22 @@ export default function ApplyPage() {
                       </select>
                     </div>
                   </div>
+
+                  <label className="flex items-start gap-2.5 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={smsConsent}
+                      onChange={(e) => setSmsConsent(e.target.checked)}
+                      className="accent-rogue-red mt-0.5 flex-shrink-0"
+                    />
+                    <span className="text-rogue-silver/80 text-xs leading-relaxed">
+                      I agree to receive SMS from Rogue Carrier Inc about my application (next steps,
+                      scheduling). Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out.{' '}
+                      <a href="/privacy-policy" className="underline hover:text-white" target="_blank">Privacy Policy</a>
+                      {' '}&amp;{' '}
+                      <a href="/sms-terms" className="underline hover:text-white" target="_blank">SMS Terms</a>.
+                    </span>
+                  </label>
 
                   <div className="flex gap-4">
                     <button

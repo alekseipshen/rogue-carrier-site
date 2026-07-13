@@ -12,6 +12,7 @@ export default function QuickApplyForm() {
     experience: '',
     cdl: 'yes',
   });
+  const [smsConsent, setSmsConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -23,7 +24,7 @@ export default function QuickApplyForm() {
       await fetch('/api/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ formType: 'quick', ...formData }),
+        body: JSON.stringify({ formType: 'quick', ...formData, smsConsent }),
       });
     } catch {
       // Continue even if email fails — don't block the user
@@ -117,6 +118,22 @@ export default function QuickApplyForm() {
           </div>
         </div>
       </div>
+
+      <label className="flex items-start gap-2.5 mt-5 cursor-pointer">
+        <input
+          type="checkbox"
+          checked={smsConsent}
+          onChange={(e) => setSmsConsent(e.target.checked)}
+          className="accent-rogue-red mt-0.5 flex-shrink-0"
+        />
+        <span className="text-rogue-silver/80 text-xs leading-relaxed">
+          I agree to receive SMS from Rogue Carrier Inc about my application (next steps,
+          scheduling). Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out.{' '}
+          <a href="/privacy-policy" className="underline hover:text-white" target="_blank">Privacy Policy</a>
+          {' '}&amp;{' '}
+          <a href="/sms-terms" className="underline hover:text-white" target="_blank">SMS Terms</a>.
+        </span>
+      </label>
 
       <motion.button
         type="submit"
