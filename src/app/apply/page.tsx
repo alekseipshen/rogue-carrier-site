@@ -291,11 +291,13 @@ export default function ApplyPage() {
                       className="accent-rogue-red mt-0.5 flex-shrink-0"
                     />
                     <span className="text-rogue-silver/80 text-xs leading-relaxed">
-                      I agree to receive SMS from Rogue Capital Group Corp about my application (next steps,
-                      scheduling). Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out.{' '}
+                      I agree to receive SMS notifications regarding my application from Rogue Capital
+                      Group Corp. Reply STOP to opt-out; Reply HELP for help; Message and data rates
+                      apply; Messaging frequency may vary. See{' '}
                       <a href="/privacy-policy" className="underline hover:text-white" target="_blank">Privacy Policy</a>
-                      {' '}&amp;{' '}
-                      <a href="/sms-terms" className="underline hover:text-white" target="_blank">SMS Terms</a>.
+                      {' '}and{' '}
+                      <a href="/sms-terms" className="underline hover:text-white" target="_blank">Terms of Service</a>
+                      {' '}for additional details.
                     </span>
                   </label>
 

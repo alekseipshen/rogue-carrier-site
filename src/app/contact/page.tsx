@@ -17,6 +17,7 @@ export default function ContactPage() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [smsConsent, setSmsConsent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -245,6 +246,23 @@ export default function ContactPage() {
                         className="w-full bg-rogue-gray border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rogue-red/50 focus:ring-1 focus:ring-rogue-red/50 transition-all resize-none"
                       />
                     </div>
+                    <label className="flex items-start gap-2.5 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={smsConsent}
+                        onChange={(e) => setSmsConsent(e.target.checked)}
+                        className="accent-rogue-red mt-0.5 flex-shrink-0"
+                      />
+                      <span className="text-rogue-silver/80 text-xs leading-relaxed">
+                        I agree to receive SMS notifications regarding my inquiry from Rogue Capital
+                        Group Corp. Reply STOP to opt-out; Reply HELP for help; Message and data rates
+                        apply; Messaging frequency may vary. See{' '}
+                        <a href="/privacy-policy" className="underline hover:text-white" target="_blank">Privacy Policy</a>
+                        {' '}and{' '}
+                        <a href="/sms-terms" className="underline hover:text-white" target="_blank">Terms of Service</a>
+                        {' '}for additional details.
+                      </span>
+                    </label>
                     <motion.button
                       type="submit"
                       whileHover={{ scale: 1.02 }}
