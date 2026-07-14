@@ -23,6 +23,22 @@ const FIELDS = {
   smsConsent: 'DQucOFvSwh80ROIOkHWq',
 };
 
+// Driver recruiters. Assignment happens HERE (not in the GHL workflow) so the
+// contact and the opportunity get the same owner — "Only Assigned Data" users
+// don't see unassigned opportunities. Hash of the phone keeps the pick stable
+// for repeat applicants while splitting new leads ~50/50.
+const RECRUITERS = [
+  'dLmIa4ISHlS8pdgVF4kv', // Iana
+  'mL7xwU07Qqo3Uxk3uIIx', // Gaby
+];
+
+function pickRecruiter(phone: string): string {
+  const digits = phone.replace(/\D/g, '');
+  let sum = 0;
+  for (const ch of digits) sum += ch.charCodeAt(0);
+  return RECRUITERS[sum % RECRUITERS.length];
+}
+
 export interface DriverLead {
   fullName: string;
   firstName?: string;
@@ -86,6 +102,8 @@ export async function pushDriverLeadToGhl(lead: DriverLead): Promise<void> {
   if (lead.currentLocation) customFields.push({ id: FIELDS.currentLocation, field_value: lead.currentLocation });
   if (lead.availability) customFields.push({ id: FIELDS.availability, field_value: lead.availability });
 
+  const assignedTo = pickRecruiter(lead.phone);
+
   const upsert = await ghlPost(token, '/contacts/upsert', {
     locationId: LOCATION_ID,
     firstName,
@@ -93,6 +111,7 @@ export async function pushDriverLeadToGhl(lead: DriverLead): Promise<void> {
     phone: toE164(lead.phone),
     email: lead.email || undefined,
     source: 'roguecarrierinc.com',
+    assignedTo,
     tags,
     customFields,
   });
@@ -107,5 +126,6 @@ export async function pushDriverLeadToGhl(lead: DriverLead): Promise<void> {
     contactId,
     name: `${lead.fullName} — CDL Driver`,
     status: 'open',
+    assignedTo,
   });
 }
