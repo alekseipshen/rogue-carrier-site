@@ -119,7 +119,7 @@ export async function pushDriverLeadToGhl(lead: DriverLead): Promise<void> {
   const contactId = (upsert.contact as { id?: string } | undefined)?.id;
   if (!contactId) throw new Error('GHL upsert returned no contact id');
 
-  await ghlPost(token, '/opportunities/', {
+  const oppRes = await ghlPost(token, '/opportunities/', {
     locationId: LOCATION_ID,
     pipelineId: DRIVER_PIPELINE_ID,
     pipelineStageId: STAGE_NEW_APPLICATION,
@@ -128,4 +128,20 @@ export async function pushDriverLeadToGhl(lead: DriverLead): Promise<void> {
     status: 'open',
     assignedTo,
   });
+
+  // The other recruiter follows the record: followers get owner-level access
+  // under "Only Assigned Data" (but can't change the owner), so BOTH recruiters
+  // see every driver lead. Non-fatal — visibility nicety, not lead delivery.
+  const follower = RECRUITERS.find((id) => id !== assignedTo);
+  const oppId = (oppRes.opportunity as { id?: string } | undefined)?.id;
+  if (follower) {
+    try {
+      await ghlPost(token, `/contacts/${contactId}/followers`, { followers: [follower] });
+      if (oppId) {
+        await ghlPost(token, `/opportunities/${oppId}/followers`, { followers: [follower] });
+      }
+    } catch (err) {
+      console.error('GHL follower add failed:', err);
+    }
+  }
 }
