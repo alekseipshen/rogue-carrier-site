@@ -106,7 +106,7 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Rogue Capital Group Corp. All rights reserved.
             </p>
             <Link
-              href="/dashcam-policy"
+              href="/samsara"
               className="text-rogue-silver hover:text-rogue-red transition-colors text-xs"
             >
               Dash Cam &amp; Biometric Data Policy

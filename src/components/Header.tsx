@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/benefits', label: 'Benefits' },
+  { href: '/samsara', label: 'Samsara' },
   { href: '/apply', label: 'Apply Now' },
   { href: '/contact', label: 'Contact' },
 ];

@@ -3,17 +3,32 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Dash Cam & Biometric Data Policy | Rogue Carrier',
+  title: 'Samsara Dash Cam & Biometric Data Policy | Rogue Carrier',
   description:
-    'How Rogue Capital Group Corp uses in-cab Samsara dash cams, what data is collected, how it is secured, our retention schedule, and your right to consent and revoke.',
-  alternates: { canonical: '/dashcam-policy' },
+    'How Rogue Capital Group Corp uses in-cab Samsara dash cams, the camera hardware we run, what data is collected, how it is secured, our retention schedule, and your right to consent and revoke.',
+  alternates: { canonical: '/samsara' },
   openGraph: {
-    title: 'Dash Cam & Biometric Data Policy | Rogue Carrier',
+    title: 'Samsara Dash Cam & Biometric Data Policy | Rogue Carrier',
     description:
-      'How Rogue Capital Group Corp uses in-cab Samsara dash cams, what data is collected, how it is secured, our retention schedule, and your right to consent and revoke.',
+      'How Rogue Capital Group Corp uses in-cab Samsara dash cams, the camera hardware we run, what data is collected, how it is secured, our retention schedule, and your right to consent and revoke.',
     type: 'website',
   },
 };
+
+const HARDWARE = [
+  {
+    title: 'AI Multicam Hub',
+    desc: 'A central hub that supports up to four auxiliary cameras, giving expanded visibility around the vehicle for added safety.',
+  },
+  {
+    title: 'Dual-Facing Dash Cam',
+    desc: 'Captures both inward- and outward-facing video through wide-angle lenses, monitoring cab activity and road conditions at the same time.',
+  },
+  {
+    title: 'Safety, Not Surveillance',
+    desc: 'The system is designed to enhance driver awareness and fleet visibility. It is a safety tool that helps protect the driver, the company, and the vehicle.',
+  },
+];
 
 const POINTS = [
   {
@@ -48,7 +63,7 @@ const POINTS = [
   },
 ];
 
-export default function DashCamPolicyPage() {
+export default function SamsaraPage() {
   return (
     <>
       {/* ============ HERO ============ */}
@@ -58,12 +73,14 @@ export default function DashCamPolicyPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <span className="text-rogue-red text-sm font-bold uppercase tracking-widest">Legal</span>
+            <span className="text-rogue-red text-sm font-bold uppercase tracking-widest">
+              Legal &middot; Samsara Program
+            </span>
             <h1
               className="text-4xl sm:text-5xl lg:text-6xl font-black mt-3 mb-6"
               style={{ fontFamily: 'var(--font-oswald)' }}
             >
-              DASH CAM &amp; <span className="text-rogue-red">BIOMETRIC DATA</span> POLICY
+              SAMSARA <span className="text-rogue-red">DASH CAM</span> &amp; BIOMETRIC DATA POLICY
             </h1>
             <p className="text-rogue-silver text-lg leading-relaxed">
               This disclosure explains how Rogue Capital Group Corp uses in-cab Samsara dash cams, what is
@@ -72,6 +89,37 @@ export default function DashCamPolicyPage() {
             </p>
             <p className="text-rogue-silver/70 text-sm mt-6">Last updated: June 29, 2026</p>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ============ THE SAMSARA SYSTEM (HARDWARE) ============ */}
+      <section className="py-20 bg-rogue-dark border-y border-white/5">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <span className="text-rogue-red text-sm font-bold uppercase tracking-widest">Hardware</span>
+            <h2
+              className="text-3xl sm:text-4xl font-black mt-3 mb-6"
+              style={{ fontFamily: 'var(--font-oswald)' }}
+            >
+              THE SAMSARA <span className="text-rogue-red">SYSTEM</span>
+            </h2>
+            <p className="text-rogue-silver leading-relaxed mb-10 max-w-3xl">
+              Our trucks run Samsara camera systems built to enhance driver awareness and fleet visibility
+              through video and monitoring hardware. Here is exactly what is installed in the cab.
+            </p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-8">
+            {HARDWARE.map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 0.08}>
+                <div className="group relative h-full p-8 rounded-2xl bg-rogue-black/40 border border-white/5 hover:border-rogue-red/30 transition-all duration-300">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-rogue-red transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-rogue-silver text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -160,9 +208,10 @@ export default function DashCamPolicyPage() {
                 CONSENT &amp; <span className="text-rogue-red">REVOCATION</span>
               </h2>
               <p className="text-rogue-silver leading-relaxed mb-4">
-                Before any recording begins, each driver reviews and signs a written consent and
-                disclosure form during onboarding. Signing is voluntary, and consent may be revoked
-                at any time without penalty.
+                All Rogue Carrier drivers acknowledge and voluntarily agree to allow the employer to use
+                Samsara dash cams in the truck they will be driving. Before any recording begins, each
+                driver reviews and signs a written consent and disclosure form during onboarding. Signing
+                is voluntary, and consent may be revoked at any time without penalty.
               </p>
               <p className="text-rogue-silver leading-relaxed mb-6">
                 To request a copy of your signed consent, ask a question about this policy, or revoke
